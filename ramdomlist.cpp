@@ -1,5 +1,7 @@
 #include <iostream>
 #include <algorithm>
+#include <fstream>
+
 using namespace std;
 
 const int N = 1e6;
@@ -22,15 +24,20 @@ int main() {
     }
     // Sắp xếp dãy thứ hai giảm dần
     sort(a[9], a[9] + N, greater<double>());
-    // In dãy thứ nhất và hai
-    cout << "Dãy tăng dần: ";
+
+    // Mở file outputfile để ghi dữ liệu ra
+    ofstream outfile("outputfile");
+    // In dãy thứ nhất và hai vào file outputfile
+    outfile << "Dãy tăng dần: ";
     for (int j = 0; j < N; j++) {
-        cout << a[8][j] << " ";
+        outfile << a[8][j] << " ";
     }
-    cout << endl << "Dãy giảm dần: ";
+    outfile << endl << "Dãy giảm dần: ";
     for (int j = 0; j < N; j++) {
-        cout << a[9][j] << " ";
+        outfile << a[9][j] << " ";
     }
-    cout << endl;
+    outfile << endl;
+    outfile.close();
+
     return 0;
 }
