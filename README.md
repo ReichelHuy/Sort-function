@@ -1,1 +1,1 @@
-# ramdomlist
+# Sort function && ramdom list
